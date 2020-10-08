@@ -25,7 +25,9 @@ int main()
         }
         else if (input == "print") {
             cin >> number;
-            cout << mb.GetMessage(number) << "\n";
+            if (mb.GetMessage(number) != " ") {
+                cout << mb.GetMessage(number) << "\n";
+            }
         }
         else if (input == "list") {
             vector <int> v;
