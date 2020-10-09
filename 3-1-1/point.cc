@@ -24,7 +24,7 @@ int main()
     Point p1, p2;
     std::cin >> p1.xpos >> p1.ypos;
     p2 = getScale2xPoint(&p1);
-    std::cout << "Calling getScalse2xPoint()\n";
+    std::cout << "Calling getScale2xPoint()\n";
     std::cout << "p1 : " << p1.xpos << " " << p1.ypos << "\n";
     std::cout << "p2 : " << p2.xpos << " " << p2.ypos << "\n";
     swapPoints (&p1, &p2);
