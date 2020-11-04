@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <vector>
 #include "animal.h"
@@ -7,13 +8,34 @@ using namespace std;
 int main()
 {
    vector <Animal*> animals;
+   string s;
    int numCat = 0, numDog = 0, numPig = 0, numDuck = 0, numLegs = 0;
-
-   // input
+   
+   getline(cin, s);
+   istringstream iss(s);
+   for (string s; iss >> s; ) {
+       if (s == "cat") {
+           animals.push_back(new Cat);
+           numCat++;
+       }
+       else if (s == "dog") {
+           animals.push_back(new Dog);
+           numDog++;
+       }
+       else if (s == "pig") {
+           animals.push_back(new Pig);
+           numPig++;
+       }
+       else if (s == "duck") {
+           animals.push_back(new Duck);
+           numDuck++;
+       }
+   }
 
    for (int i = 0; i < animals.size(); i++) {
-      cout << Animals[i]->talk() << " ";
-      delete Animals[i];
+      cout << animals[i]->talk() << " ";
+      numLegs += animals[i]->getNumLegs();
+      delete animals[i];
    }
    cout << endl;
    cout << "We have ";

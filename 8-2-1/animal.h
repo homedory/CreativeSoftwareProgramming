@@ -5,7 +5,7 @@ class Animal {
     public:
         string name;
         int number_of_legs;
-        Animal() {}
+        Animal(string _name, int num_of_legs): name(_name), number_of_legs(num_of_legs) {}
         virtual string getName() = 0;
         virtual string talk() = 0;
         virtual int getNumLegs() = 0;
@@ -13,7 +13,7 @@ class Animal {
 
 class Cat: public Animal {
     public:
-        Cat(): name("cat"), number_of_legs(4) {}
+        Cat(): Animal("cat", 4) {}
         virtual string getName();
         virtual string talk();
         virtual int getNumLegs();
@@ -21,7 +21,7 @@ class Cat: public Animal {
 
 class Dog: public Animal {
     public:
-        Dog(): name("dog"), number_of_legs(4) {}
+        Dog(): Animal("dog", 4) {}
         virtual string getName();
         virtual string talk();
         virtual int getNumLegs();
@@ -29,7 +29,7 @@ class Dog: public Animal {
 
 class Pig: public Animal {
     public:
-        Pig(): name("pig"), number_of_legs(4){}
+        Pig(): Animal("pig", 4) {}
         virtual string getName();
         virtual string talk();
         virtual int getNumLegs(); 
@@ -37,7 +37,7 @@ class Pig: public Animal {
 
 class Duck: public Animal {
     public:
-        Duck(): name("duck"), number_of_legs(2) {}
+        Duck(): Animal("duck", 2) {}
         virtual string getName();
         virtual string talk();
         virtual int getNumLegs();
